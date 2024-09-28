@@ -92,4 +92,17 @@ CẢNH BÁO" LaFrnColor="0x0 -1" IsBackColor="0" BgColor="0xfdf0c4 0" Cha
 	<PartInfo PartType="Text" PartName="TXT_5" PartClassifyType="OtherClassType" PartID="1_TXT_5">
 		<General TextContent="ID MOSBUS" LaFrnColor="0x0 -1" IsBackColor="0" BgColor="0xfdf0c4 0" CharSize="1714141414141414" Bold="0" StartPt="621 24" Width="0" Height="0" Area="621 24 733 48" InAlign="1" Locking="0" IsEnableStringTable="0" GroupNames="ID:-01" IsDynamic="0" StaticTextId="-1" />
 	</PartInfo>
+	<PartInfo PartType="FunctionSwitch" PartName="FS_1" PartClassifyType="Switch" PartID="1_FS_1">
+		<General Desc="FS_0" Area="12 398 145 469" ScrSwitch="0" FuncFunc="3" ScreenNo="2" ScreenNo2="-1" PointPos="0 0" PopupScreenType="0" PopupCloseWithParent="0" OperateDataType="0" FigureFile="" BorderColor="0xf7e7ad 0" Pattern="0" FrnColor="0x0 0" BgColor="0x0 0" BmpIndex="-1" Align="3" LaStartPt="11 12" DelayTime="0" FunAllTerminal="0" EnableTryAddr="0" TextAlign="0" TextArea="114 46" Locking="0" />
+		<Extension TouchState="1" Buzzer="1" />
+		<MoveZoom DataFormatMZ="0" MutipleMZ="1.000000000000000" />
+		<TrigHide UseShowHide="0" HideType="0" IsHideAllTime="0" />
+		<Lock Lockmate="0" UnDrawLock="0" LockMode="0" IsShowGrayScale="0" />
+		<PartPwd IsUesPartPassword="0" IsSetLowerLev="0" PartPasswordLev="0" />
+		<ClickPopTrig />
+		<UserAuthority IsUseUserAuthority="0" IsPopUserLoginWin="0" PopType="0" IsHidePart="0" LogText="" />
+		<SVGColor Status="0" svgfile="Button\Button0305.svg" dark="0xf5fa7d 0" light="0xffcc00 0" hlight="0x0 0" shadow="0xff5904 0" shape="0x0 0" gstartcolor="0x0 0" gmidcolor="0x0 0" gendcolor="0x0 0" />
+		<SVGColor Status="1" svgfile="Button\Button0306.svg" dark="0x66cc33 0" light="0x339900 0" hlight="0x0 0" shadow="0x336600 0" shape="0x0 0" gstartcolor="0x0 0" gmidcolor="0x0 0" gendcolor="0x0 0" />
+		<Label Status="0" Bold="0" LaIndexID="Offset" CharSize="1917171717171717" LaFrnColor="0x0 0" />
+	</PartInfo>
 </ScrInfo>

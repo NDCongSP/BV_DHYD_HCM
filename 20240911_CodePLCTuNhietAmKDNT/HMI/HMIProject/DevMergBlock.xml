@@ -8,7 +8,8 @@
 				<Block No="0" Addr="Conn:Stat:Reg:Addr:ByOrder:JZ_W_1:0:D:20:0:25600" Len="4" Fast="0" ScnNo="0" />
 				<Block No="1" Addr="Conn:Stat:Reg:Addr:ByOrder:JZ_W_1:0:D:300:0:25600" Len="4" Fast="0" ScnNo="0" />
 				<Block No="2" Addr="Conn:Stat:Reg:Addr:ByOrder:JZ_W_1:0:D:300:0:25600" Len="4" Fast="0" ScnNo="1" />
-				<Block No="3" Addr="Conn:Stat:Reg:Addr:ByOrder:JZ_W_1:0:D:310:0:25600" Len="1" Fast="0" ScnNo="1" />
+				<Block No="3" Addr="Conn:Stat:Reg:Addr:ByOrder:JZ_W_1:0:D:304:0:25600" Len="2" Fast="0" ScnNo="2" />
+				<Block No="4" Addr="Conn:Stat:Reg:Addr:ByOrder:JZ_W_1:0:D:310:0:25600" Len="1" Fast="0" ScnNo="1" />
 			</WordBlock>
 			<DWordBlock />
 		</Connection>

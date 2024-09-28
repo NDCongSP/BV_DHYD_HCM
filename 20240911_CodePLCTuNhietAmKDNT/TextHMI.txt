@@ -11,3 +11,5 @@ NHIỆT-ẨM KHO DƯỢC NGOẠI TRÚ
 CÀI ĐẶT
 
 TRANG CHỦ
+
+Pass cấu hình offser: 1234567890
