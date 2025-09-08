@@ -1,0 +1,95 @@
+{
+  "ItemType": 0,
+  "ServerAddress": "127.0.0.1",
+  "Port": 8800,
+  "CommunicationMode": 0,
+  "RefreshRate": 1000,
+  "CreatedDate": "2025-08-10T10:36:37.8188829+07:00",
+  "Username": null,
+  "Password": null,
+  "Childs": [
+    {
+      "ItemType": 1,
+      "Name": "Local Station",
+      "Path": "Local Station",
+      "Description": null,
+      "DisplayInfo": null,
+      "Error": null,
+      "ConnectionStatus": 1,
+      "Childs": [
+        {
+          "ItemType": 3,
+          "Name": "Channel1",
+          "Path": "Local Station/Channel1",
+          "Description": null,
+          "DisplayInfo": "ModbusRTU COM3.9600.8.N.1",
+          "Error": null,
+          "ConnectionStatus": 0,
+          "Childs": [
+            {
+              "ItemType": 4,
+              "Name": "Device1",
+              "Path": "Local Station/Channel1/Device1",
+              "Description": null,
+              "DisplayInfo": "1",
+              "Error": null,
+              "ConnectionStatus": 0,
+              "Childs": [
+                {
+                  "ItemType": 6,
+                  "Name": "Id_Add",
+                  "Path": "Local Station/Channel1/Device1/Id_Add",
+                  "Description": null,
+                  "DisplayInfo": null,
+                  "Error": null,
+                  "ConnectionStatus": 0,
+                  "Childs": [],
+                  "Properties": {
+                    "DataType": "Word",
+                    "Address": "400201"
+                  }
+                },
+                {
+                  "ItemType": 6,
+                  "Name": "Siren",
+                  "Path": "Local Station/Channel1/Device1/Siren",
+                  "Description": null,
+                  "DisplayInfo": null,
+                  "Error": null,
+                  "ConnectionStatus": 0,
+                  "Childs": [],
+                  "Properties": {
+                    "DataType": "Word",
+                    "Address": "400203"
+                  }
+                }
+              ],
+              "Properties": {
+                "DeviceId": "1",
+                "Timeout": "1000",
+                "TryReadWriteTimes": "3",
+                "ReadMode": "Block",
+                "InputContactReadBlockSettings": "[]",
+                "OutputCoilsReadBlockSettings": "[]",
+                "InputRegisterReadBlockSettings": "[]",
+                "HoldingRegisterReadBlockSettings": "[]"
+              }
+            }
+          ],
+          "Properties": {
+            "Port": "COM3",
+            "ScanRate": "1000",
+            "Baudrate": "9600",
+            "Parity": "None",
+            "StopBits": "One",
+            "DelayBetweenPool": "5",
+            "MaxWritesCount": "10",
+            "DataBits": "8"
+          }
+        }
+      ],
+      "Properties": {}
+    }
+  ],
+  "Properties": {}
+}
