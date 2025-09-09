@@ -138,6 +138,7 @@
     </Compile>
     <Compile Include="model\ConfigModel.cs" />
     <Compile Include="model\DataModel.cs" />
+    <Compile Include="model\RealtimeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

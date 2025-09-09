@@ -30,6 +30,8 @@ namespace SirenCenter
         private bool _offSiren = false;
 
         private readonly Database _db;
+
+        public bool _isWrite = false;
         public Form1(Database db)
         {
             _db = db;
@@ -201,7 +203,7 @@ namespace SirenCenter
                                     double low = Convert.ToDouble(row.Cells["LowLevel"].Value);
                                     double high = Convert.ToDouble(row.Cells["HighLevel"].Value);
 
-                                    if (value < low || value > high)
+                                    if (value < low || value > high || row.Cells["Value"].Value == "Bad")
                                     {
                                         row.DefaultCellStyle.BackColor = Color.Red; // màu nền
                                         row.DefaultCellStyle.ForeColor = Color.White; // màu chữ
@@ -226,7 +228,7 @@ namespace SirenCenter
                                 double low = Convert.ToDouble(row.Cells["LowLevel"].Value);
                                 double high = Convert.ToDouble(row.Cells["HighLevel"].Value);
 
-                                if (value < low || value > high)
+                                if (value < low || value > high || row.Cells["Value"].Value == "Bad")
                                 {
                                     row.DefaultCellStyle.BackColor = Color.Red; // màu nền
                                     row.DefaultCellStyle.ForeColor = Color.White; // màu chữ
@@ -239,22 +241,28 @@ namespace SirenCenter
 
                     foreach (var item in dataCheck)
                     {
-                        if (item.Value > item.HighLevel || item.Value < item.LowLevel)
+                        var value = item.Value != "Bad" ? Convert.ToDouble(item.Value) : 0;
+
+                        if (item.Value == "Bad" || value > item.HighLevel || value < item.LowLevel)
                         {
-                            if (_sirenValue == 1 || _offSiren == true)
+                            if (_offSiren == true)
                             {
                                 if (_sirenValue == 1) _easyDriverConnector.GetTag("Local Station/Channel1/Device1/Siren").Write("0");
                                 continue;
                             }
-
-                            _easyDriverConnector.GetTag("Local Station/Channel1/Device1/Siren").Write("1");
+                            else if (_offSiren == false)
+                            {
+                                if (_sirenValue == 0) _easyDriverConnector.GetTag("Local Station/Channel1/Device1/Siren").Write("1");
+                                break;
+                            }
                         }
                         else _countOk += 1;
                     }
 
-                    if (_countOk == dataCheck.Count )
+                    if (_countOk == dataCheck.Count)
                     {
                         _offSiren = false;
+                        _isWrite = false;
 
                         if (_sirenValue == 1)
                             _easyDriverConnector.GetTag("Local Station/Channel1/Device1/Siren").Write("0");
@@ -299,18 +307,11 @@ namespace SirenCenter
                     td.Id,
                     td.DateTime as CreateAt,
                     td.LocationId,
-                    configModel.Name,
+                    td.LocationName,
                     td.Value,
                     configModel.LowLevel,
                     configModel.HighLevel
-                FROM gateway.test_data td
-                JOIN (
-                    SELECT LocationId, MAX(DateTime) AS MaxDate
-                    FROM gateway.test_data
-                    GROUP BY LocationId
-                ) latest
-                    ON td.LocationId = latest.LocationId 
-                    AND td.DateTime = latest.MaxDate
+                FROM gateway.test_realtime td
                 JOIN gateway.test_location configModel
                     ON configModel.Id = td.LocationId;
             ";

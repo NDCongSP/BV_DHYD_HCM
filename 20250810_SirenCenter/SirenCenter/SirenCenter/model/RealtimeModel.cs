@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace SirenCenter
 {
-    public class DataModel
+    public class RealtimeModel
     {
         public int Id { get; set; }
-        public DateTime CreateAt { get; set; }
+        public DateTime DateTime { get; set; }
         public int LocationId { get; set; }
+        public string LocationName { get; set; }
         public string Value { get; set; }
-        public string Name { get; set; }
-        public double LowLevel { get; set; }
-        public double HighLevel { get; set; }
     }
 }
